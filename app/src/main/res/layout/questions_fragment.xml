@@ -15,7 +15,7 @@
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginTop="50dp"
         android:layout_weight="1"
-        android:text="" />
+        android:questionText="" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,14 +27,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/false_button" />
+            android:questionText="@string/false_button" />
 
         <Button
             android:id="@+id/true_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/true_button" />
+            android:questionText="@string/true_button" />
 
     </LinearLayout>
 
@@ -63,7 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/restart_button" />
+                android:questionText="@string/restart_button" />
 
             <ImageButton
                 android:id="@+id/hint_btn"

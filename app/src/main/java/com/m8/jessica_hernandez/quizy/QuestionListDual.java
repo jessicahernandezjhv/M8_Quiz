@@ -1,21 +1,21 @@
 package com.m8.jessica_hernandez.quizy;
 
-public class QuestionList {
+public class QuestionListDual {
 
-    private static final Question[] questions = new Question[] {
-            new Question("Madrid es la capital de España?", true,
+    private static final QuestionDual[] questions = new QuestionDual[] {
+            new QuestionDual("Hay arsénico en el café?", true,
                     R.drawable.ic_dashboard_black_24dp),
-            new Question("Francia esta en Europa?", true,
+            new QuestionDual("La misma película, sin cortes, dura menos en televisión que en el cine?", true,
                     R.drawable.ic_home_black_24dp),
-            new Question("Los pirineos estan en el reino unido?", false,
+            new QuestionDual("En el Palacio del Elíseo, en París, viven varios animales. Tradicionalmente, siempre hay un cerdo llamado Napoleón?", false,
                     R.drawable.ic_launcher_background),
-            new Question("Sudafrica esta en el emisferio norte.", false,
+            new QuestionDual("Sudafrica esta en el emisferio norte.", false,
                     R.drawable.ic_launcher_foreground),
-            new Question("Cataluña esta en españa?", true,
+            new QuestionDual("Cataluña esta en españa?", true,
                     R.drawable.ic_notifications_black_24dp),
-            new Question("España es un estado de los estados unidos\n de america(EUA).", false,
+            new QuestionDual("España es un estado de los estados unidos\n de america(EUA).", false,
                     R.drawable.ic_notifications_black_24dp),
-            new Question("El instituto Joan de Áustria esta en Barcelona?", true,
+            new QuestionDual("El instituto Joan de Áustria esta en Barcelona?", true,
                     R.drawable.ic_launcher_foreground),
     };
 
@@ -31,7 +31,7 @@ public class QuestionList {
     }
 
     public static boolean checkAnswere(boolean answere) {
-        return questions[nextQuestion].getAnswere() == answere;
+        return questions[nextQuestion].getCorrectAnswer() == answere;
     }
 
     public static void reset() {
@@ -39,11 +39,11 @@ public class QuestionList {
     }
 
     public static String getCurrentQuestionText() {
-        return questions[nextQuestion].getText();
+        return questions[nextQuestion].getQuestionText();
     }
 
     public static int getCurrentQuestionHint() {
-        return questions[nextQuestion].getHint();
+        return questions[nextQuestion].getClue();
     }
 
     public static int getNumQuestions() {

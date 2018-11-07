@@ -22,7 +22,7 @@ public class HintDialog extends DialogFragment {
 
         View view = inflater.inflate(R.layout.content_hint, null);
         viewHint = view.findViewById(R.id.viewHint);
-        viewHint.setImageResource(QuestionList.getCurrentQuestionHint());
+        viewHint.setImageResource(QuestionListDual.getCurrentQuestionHint());
 
         builder.setView(view)
                 .setPositiveButton("Close", new DialogInterface.OnClickListener() {

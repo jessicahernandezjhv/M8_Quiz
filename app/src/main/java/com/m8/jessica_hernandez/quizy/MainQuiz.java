@@ -38,7 +38,7 @@ public class MainQuiz extends AppCompatActivity
 
         gameFinished = preferences.getBoolean(getString(R.string.saved_game_state), false);
 
-        QuestionList.setIndex(
+        QuestionListDual.setIndex(
                 preferences.getInt(getString(R.string.saved_next_question), 0));
 
         prefEditor = preferences.edit();
@@ -47,28 +47,28 @@ public class MainQuiz extends AppCompatActivity
     private void saveSharedPreferences() {
         prefEditor.putInt(getString(R.string.saved_answeres), answers);
         prefEditor.putBoolean(getString(R.string.saved_game_state), gameFinished);
-        prefEditor.putInt(getString(R.string.saved_next_question), QuestionList.getIndex());
+        prefEditor.putInt(getString(R.string.saved_next_question), QuestionListDual.getIndex());
         prefEditor.commit();
     }
 
     public String compareAnswere(boolean answerGiven){
         String res = "Game Finished (" + answers + " answers of " +
-                QuestionList.getNumQuestions() + " questions).";
+                QuestionListDual.getNumQuestions() + " questions).";
 
         if (!gameFinished) {
 
             String toastMessage = getString(R.string.toast_incorrect);
-            if (QuestionList.checkAnswere(answerGiven)) {
+            if (QuestionListDual.checkAnswere(answerGiven)) {
                 toastMessage = getString(R.string.toast_correct);
                 answers++;
             }
 
             Toast.makeText(getApplicationContext(), toastMessage, Toast.LENGTH_SHORT).show();
 
-            gameFinished = !QuestionList.next();
+            gameFinished = !QuestionListDual.next();
 
             if (!gameFinished)
-                res = QuestionList.getCurrentQuestionText();
+                res = QuestionListDual.getCurrentQuestionText();
         }
 
         saveSharedPreferences();

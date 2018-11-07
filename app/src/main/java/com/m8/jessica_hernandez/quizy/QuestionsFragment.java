@@ -69,7 +69,7 @@ public class QuestionsFragment extends Fragment {
         restart_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                QuestionList.reset();
+                QuestionListDual.reset();
                 listener.restartGame();
 
                 true_btn.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +89,7 @@ public class QuestionsFragment extends Fragment {
                         "Quiz Restarted", Toast.LENGTH_SHORT)
                         .show();
 
-                questionText.setText(QuestionList.getCurrentQuestionText());
+                questionText.setText(QuestionListDual.getCurrentQuestionText());
             }
         });
 
